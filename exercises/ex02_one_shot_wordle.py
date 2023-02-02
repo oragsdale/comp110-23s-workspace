@@ -6,7 +6,7 @@ SECRET: str = "python"
 guess: str = input(f"What is your { str(len(SECRET)) }-letter guess? ")
 
 # This if block checks to make sure the guess the user inputs has the same number of characters as the pre-determined word.
-if len(guess) < len(SECRET):
+if len(guess) != len(SECRET):
     guessing: bool = True
 else: 
     guessing: bool = False
