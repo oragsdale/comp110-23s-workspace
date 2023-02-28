@@ -5,7 +5,7 @@ __author__ = "730560351"
 def all(input: list[int], x: int) -> bool: 
     """All compares a list of integers to a single integer, then determines whether all the integers in the list are the same as the single integer."""
     if len(input) == 0:
-        raise ValueError("all() arg is an empty List")
+        return False
         
     idx = 0
     while idx < len(input):
