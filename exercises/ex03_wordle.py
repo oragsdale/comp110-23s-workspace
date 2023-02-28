@@ -38,7 +38,7 @@ def emojified(guess: str, secret: str) -> str:
 
     return display
         
-def input_guess(expected_len: int):
+def input_guess(expected_len: int) -> str:
     """This function prompts the user for a guess and insures that the guess is of proper length."""
     guess: str = input(f"Enter a {expected_len} character word: ")
     
