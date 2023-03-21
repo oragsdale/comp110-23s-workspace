@@ -10,7 +10,7 @@ COWBOY = "\U0001F920"
 
 
 def greet() -> None:
-    """greet greets the user, and prompts them for their name."""
+    """The function greet greets the user, and prompts them for their name."""
     global player
     print(f"\nGreetings! Welcome to virtual vball! This game is a simulation of real life indoor volleyball.")
     player_name: input(str) = input("What is the users name? ")
@@ -18,7 +18,7 @@ def greet() -> None:
     
 
 def rally() -> None:
-    """rally is run when a serve is recieved by the other team and the ball is in play. This will always go back to the serve."""
+    """The function rally is run when a serve is recieved by the other team and the ball is in play. This will always go back to the serve."""
     global points
     swing: int = randint(0, 10)
     recieve: input(str) = input("\nThe other team received your serve. The ball is coming your way! Do you want to hit from the... \noutside \nopposite \nmiddle \n")
@@ -41,7 +41,7 @@ def rally() -> None:
 
 
 def top() -> None:
-    """top gives a random result following the user choosing to top spin serve."""
+    """The function top gives a random result following the user choosing to top spin serve."""
     global points
     serve: int = randint(0, 10)
     if serve <= 2:
@@ -55,7 +55,7 @@ def top() -> None:
 
 
 def power_float() -> None:
-    """top gives a random result following the user choosing to top spin serve."""
+    """The function power_float gives a random result following the user choosing to power float serve."""
     global points
     serve: int = randint(0, 10)
     if serve <= 2:
@@ -69,7 +69,7 @@ def power_float() -> None:
 
 
 def hybrid(score: int) -> int:
-    """hybrid is the custom function. It recieves the points and determines whether or not the user is able to do a hybrid serve. This is high risk, so if the score is close to 5 hybrids are not allowed."""
+    """The functino hybrid is the custom function. It recieves the points and determines whether or not the user is able to do a hybrid serve. This is high risk, so if the score is close to 5 hybrids are not allowed."""
     global points
     serve: int = randint(0, 10)
     if score < 4:
@@ -85,7 +85,7 @@ def hybrid(score: int) -> int:
 
 
 def main() -> None:
-    """main runs each of the functions and procedures in a changing order based on the users decisions."""
+    """The function main runs each of the functions and procedures in a changing order based on the users decisions."""
     global points
     greet()
     playing = True
