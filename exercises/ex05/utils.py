@@ -1,4 +1,4 @@
-"""EX05 list utility functions"""
+"""EX05 list utility functions."""
 
 __author__ = "730560351"
 
@@ -15,7 +15,7 @@ def only_evens(input: list[int]) -> list[int]:
 
 def concat(xs: list[int], ys: list[int]) -> list[int]:
     """Given two lists of ints, concat will return a new list containing all elements of both lists."""
-    new_list : list[int] = []
+    new_list: list[int] = []
     for item in xs:
         new_list.append(item)
     for item2 in ys:

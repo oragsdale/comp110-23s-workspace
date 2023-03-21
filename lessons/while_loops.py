@@ -1,5 +1,5 @@
 """demonstrates while loops by finding low value in string"""
-
+"""
 card: str = "5235"
 
 card_idx: int = 0
@@ -12,3 +12,14 @@ while card_idx < 4:
         low_card = current_card
     card_idx += 1
 print(low_card)
+"""
+
+playing = True
+while playing:
+    guess: input(str) = input("guess: ")
+    if guess == "yes": 
+        print("goooood")
+    if guess == "bad":
+        print("boooo")
+        playing = False
+
