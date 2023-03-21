@@ -8,6 +8,7 @@ points: int = 0
 player: str = ""
 COWBOY = "\U0001F920"
 
+
 def greet() -> None:
     """greet greets the user, and prompts them for their name."""
     global player
@@ -17,6 +18,7 @@ def greet() -> None:
     
 
 def rally() -> None:
+    """rally is run when a serve is recieved by the other team and the ball is in play. This will always go back to the serve."""
     global points
     swing: int = randint(0, 10)
     recieve: input(str) = input("\nThe other team received your serve. The ball is coming your way! Do you want to hit from the... \noutside \nopposite \nmiddle \n")
@@ -67,9 +69,10 @@ def power_float() -> None:
 
 
 def hybrid(score: int) -> int:
+    """hybrid is the custom function. It recieves the points and determines whether or not the user is able to do a hybrid serve. This is high risk, so if the score is close to 5 hybrids are not allowed."""
     global points
     serve: int = randint(0, 10)
-    if score < 3:
+    if score < 4:
         if serve < 5:
             print(f"\nYou served an aggresive hybrid and it was an ace! Way to go {player}.")
             score += 1 
@@ -82,8 +85,8 @@ def hybrid(score: int) -> int:
 
 
 def main() -> None:
-    global points
     """main runs each of the functions and procedures in a changing order based on the users decisions."""
+    global points
     greet()
     playing = True
     while playing and points < 5: 
