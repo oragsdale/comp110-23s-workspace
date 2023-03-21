@@ -12,9 +12,9 @@ COWBOY = "\U0001F920"
 def greet() -> None:
     """The function greet greets the user, and prompts them for their name."""
     global player
-    print(f"\nGreetings! Welcome to virtual vball! This game is a simulation of real life indoor volleyball.")
+    print("\nGreetings! Welcome to virtual vball! This game is a simulation of real life indoor volleyball.")
     player_name: input(str) = input("What is the users name? ")
-    player = player_name
+    player: str = player_name
     
 
 def rally() -> None:
@@ -23,7 +23,7 @@ def rally() -> None:
     swing: int = randint(0, 10)
     recieve: input(str) = input("\nThe other team received your serve. The ball is coming your way! Do you want to hit from the... \noutside \nopposite \nmiddle \n")
 
-    if recieve.lower == "outside" or "opposite":
+    if recieve == "outside" or "opposite":
         if swing < 3:
             print("You got blocked! Serve again.")
         elif swing > 3 and swing < 8: 
@@ -32,7 +32,7 @@ def rally() -> None:
         elif swing >= 8:
             print("You swung out. Serve again!")
 
-    if recieve.lower == "middle":
+    if recieve == "middle":
         if swing < 4:
             print("You got blocked! Serve again.")
         else: 
