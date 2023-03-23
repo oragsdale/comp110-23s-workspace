@@ -14,7 +14,7 @@ def greet() -> None:
     global player
     print("\nGreetings! Welcome to virtual vball! This game is a simulation of real life indoor volleyball.")
     player_name: input(str) = input("What is the users name? ")
-    player: str = player_name
+    player = player_name
     
 
 def rally() -> None:
@@ -88,7 +88,7 @@ def main() -> None:
     """The function main runs each of the functions and procedures in a changing order based on the users decisions."""
     global points
     greet()
-    playing = True
+    playing: bool = True
     while playing and points < 5: 
         start: input(str) = input("\nYou're serving first would you like to... \ntop spin \npower float \nhybrid \nend game \n")
         
