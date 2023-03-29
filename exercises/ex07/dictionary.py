@@ -1,6 +1,8 @@
 """The function skeletons for ex07 will be implemented within this file."""
 
+
 __author__ = "730560351"
+
 
 def invert(inp_dict: dict[str, str]) -> dict[str, str]:
     """Invert returns a new dictionary which contains the values of the input dictionary as its keys, and the keys of the input dictionary as its values."""
@@ -16,8 +18,8 @@ def invert(inp_dict: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(inp_dict: dict[str, str]) -> str:
     """Favorite_color returns the string within the input dictionary that occurs the most as a value."""
-    blue = 0
-    yellow = 0
+    blue: int = 0
+    yellow: int = 0
     for key in inp_dict: 
         if inp_dict[key] == "blue":
             blue += 1
@@ -27,7 +29,7 @@ def favorite_color(inp_dict: dict[str, str]) -> str:
     if blue > yellow:
         return "blue"
     elif blue < yellow:
-        return "blue"
+        return "yellow"
     elif len(inp_dict) == 0: 
         return ""
     elif blue == yellow: 
