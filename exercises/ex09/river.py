@@ -38,16 +38,16 @@ class River:
         """Checks the hunger level of the bears and removes the bears beneath the required hunger level."""
         bears: list[Bear] = []
         for x in self.bears:
-            if Bear.hunger_score() >= 0:
+            if x.hunger_score >= 0:
                 bears.append(x)
         self.bears = bears
 
         return None
                 
-    def check_ages(self):
+    def check_ages(self): 
         """Checks the ages of fish and bears and removes the ones who are too old."""
         fish: list[Fish] = []
-        for x in self.fish:
+        for x in self.fish: 
             if x < 4: 
                 fish.append(x)
         self.fish = fish
@@ -63,14 +63,15 @@ class River:
     def repopulate_fish(self):
         """Adds to the fish population given the number of fish that were born."""
         num_fish: float = len(self.fish)
-        self.bears += (num_fish//2) * 4
+        for x in ((num_fish//2) * 4):
+            self.fish.append(x)
         return None
     
     def repopulate_bears(self):
         """Adds to the number of bears given the number of bears that were born."""
         num_bears: float = len(self.bears)
-        self.bears += num_bears//2
-
+        for x in num_bears//2:
+            self.bears.append(x)
         return None
     
     def view_river(self):
