@@ -48,13 +48,13 @@ class River:
         """Checks the ages of fish and bears and removes the ones who are too old."""
         fish: list[Fish] = []
         for x in self.fish: 
-            if x < 4: 
+            if x.age < 4: 
                 fish.append(x)
         self.fish = fish
 
         bears: list[Bear] = []
         for x in self.bears:
-            if x <= 5:
+            if x.age <= 5:
                 bears.append(x)
         self.bears = bears
 
@@ -63,14 +63,14 @@ class River:
     def repopulate_fish(self):
         """Adds to the fish population given the number of fish that were born."""
         num_fish: float = len(self.fish)
-        for x in ((num_fish//2) * 4):
+        for x in range(num_fish // 2) * 4:
             self.fish.append(x)
         return None
     
     def repopulate_bears(self):
         """Adds to the number of bears given the number of bears that were born."""
         num_bears: float = len(self.bears)
-        for x in num_bears//2:
+        for x in range(num_bears // 2):
             self.bears.append(x)
         return None
     
