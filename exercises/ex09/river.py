@@ -104,5 +104,5 @@ class River:
 
     def one_river_week(self):
         """Runs one_river_day 7 times in order to create a full week."""
-        while self.day <= 7:
+        while self.day < 7:
             self.one_river_day()
