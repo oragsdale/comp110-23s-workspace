@@ -9,7 +9,7 @@ from exercises.ex09.bear import Bear
 class River:
     """Enacts multiple processes between the bears and fish within the river."""
     
-    def __init__(self, num_fish: int, num_bears:int):
+    def __init__(self, num_fish: int, num_bears: int):
         """New River with num_fish Fish and num_bears Bears."""
         self.day: int = 0
         self.fish: list[Fish] = []
