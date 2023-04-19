@@ -63,7 +63,7 @@ class River:
     def repopulate_fish(self):
         """Adds to the fish population given the number of fish that were born."""
         num_fish: float = len(self.fish)
-        for x in range(num_fish // 2) * 4:
+        for x in range(num_fish // 2 * 4):
             self.fish.append(x)
         return None
     
