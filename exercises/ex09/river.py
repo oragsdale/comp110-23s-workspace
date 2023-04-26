@@ -5,6 +5,8 @@ __author__ = "730560351"
 from exercises.ex09.fish import Fish
 from exercises.ex09.bear import Bear
 
+from fish import Fish
+from bear import Bear
 
 class River:
     """Enacts multiple processes between the bears and fish within the river."""
@@ -20,12 +22,6 @@ class River:
         for x in range(0, num_bears):
             self.bears.append(Bear())
 
-    def remove_fish(self, amount: int):
-        """Removes fish a certain given amount of fish from the fish population."""
-        for x in range(amount):
-            self.fish.pop(x)
-        return None
-
     def bears_eating(self):
         """Removes fish and changes bears' hunger scores when the bears eat."""
         for bears in self.bears:
@@ -35,29 +31,9 @@ class River:
         return None
     
     def check_hunger(self):
-        """Checks the hunger level of the bears and removes the bears beneath the required hunger level."""
-        bears: list[Bear] = []
-        for x in self.bears:
-            if x.hunger_score >= 0:
-                bears.append(x)
-        self.bears = bears
-
         return None
                 
-    def check_ages(self): 
-        """Checks the ages of fish and bears and removes the ones who are too old."""
-        fish: list[Fish] = []
-        for x in self.fish: 
-            if x.age < 4: 
-                fish.append(x)
-        self.fish = fish
-
-        bears: list[Bear] = []
-        for x in self.bears:
-            if x.age <= 5:
-                bears.append(x)
-        self.bears = bears
-
+    def check_ages(self):
         return None
         
     def repopulate_fish(self):
@@ -80,7 +56,6 @@ class River:
         return None
             
     def one_river_day(self):
-        """Progresses all of the populations and timelines within one day on the river."""
         # Increase day by 1
         self.day += 1
         # Simulate one day for all Bears
