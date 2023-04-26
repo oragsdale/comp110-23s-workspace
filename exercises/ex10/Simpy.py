@@ -8,27 +8,29 @@ __author__ = "730560351"
 
 
 class Simpy:
+    """Simpy class."""
+
     values: list[float]
 
     # TODO: Your constructor and methods will go here.
     def __init__(self, values):
-        """Initializes the vlaues attribute of newly constructed objects."""
+        """Initialize the vlaues attribute of newly constructed objects."""
         self.values = values
 
     def __str__(self) -> str: 
-        """Creates a string representation of Simpy objects."""
+        """Create a string representation of Simpy objects."""
         return f"Simpy({self.values})"
     
     def fill(self, value: float, num: int) -> None:
-        """fills a Simpy's values with a specific numbher of repeating values."""
+        """Fill a Simpy's values with a specific numbher of repeating values."""
         new_list: list[float] = []
         for item in range(num):
             new_list.append(value)
         self.values = new_list
 
     def arange(self, start: float, stop: float, step: float = 1.0) -> None:
-        "Fills values attribute with range of values in terms of floats."
-        #assert step != 0.0
+        """Fill values attribute with range of values in terms of floats."""
+        assert step != 0.0
         if step > 0: 
             value: float = start
             while value < stop: 
@@ -41,12 +43,12 @@ class Simpy:
                 value += step
         
     def sum(self) -> float:
-        """Computes and returns the sum of all items in values attribute."""
+        """Compute and returns the sum of all items in values attribute."""
         total: float = sum(self.values)
         return total
     
     def __add__(self, rhs: Union[Simpy, float]) -> Simpy:
-        """Utilizes __add__ magic method."""
+        """Utilize __add__ magic method."""
         if type(rhs) == float:
             new: Simpy = Simpy([])
             idx: int = 0
@@ -64,7 +66,7 @@ class Simpy:
         return new
     
     def __pow__(self, rhs: Union[Simpy, float]) -> Simpy:
-        """Utilizes the power operator in conjunction with Simpy objects and floats."""
+        """Utilize the power operator in conjunction with Simpy objects and floats."""
         if type(rhs) == float:
             new: Simpy = Simpy([])
             idx: int = 0
@@ -83,7 +85,7 @@ class Simpy:
             return new
     
     def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
-        """Produces a mask based on the equality of each item in teh values attribute with some other Simpy object or float value."""
+        """Produce a mask based on the equality of each item in teh values attribute with some other Simpy object or float value."""
         if type(rhs) == float: 
             new_list: list[bool] = []
             idx: int = 0
@@ -108,7 +110,7 @@ class Simpy:
             return new_list
     
     def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
-        """Produces a mask based on the greater than relationsh9ip between each item in the values attribute wth some other Simpy or float value."""
+        """Produce a mask based on the greater than relationsh9ip between each item in the values attribute wth some other Simpy or float value."""
         if type(rhs) == float: 
             new_list: list[bool] = []
             idx: int = 0
@@ -132,8 +134,8 @@ class Simpy:
                 idx += 1
             return new_list
         
-    def __getitem__(self, rhs: Union[int, list[float]]) -> Union[float, Simpy]: 
-        """Implements subscription operator with Simpy objects."""
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]: 
+        """Implement subscription operator with Simpy objects."""
         if type(rhs) == int:
             idx: int = 0
             while idx < len(self.values):
